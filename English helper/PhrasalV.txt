@@ -1,0 +1,170 @@
+*ON
+продолжать|    carry	on
+keen	on
+сесть на поезд(автобус, корабль)|   get	on
+быть в хороших отношения|   get	on
+залогиниться|    log	on
+комментировать что-то|   comment	on
+decide	on
+spend	on
+включить|   turn	on
+
+*OUT
+поесть в ресторане|    eat	out
+зачеркнуть|    cross	out
+обратить чье-либо внимание на что-то важное|   point	out
+зачитать на аудиторию|   read	out
+затереть ластиком|   rub	out
+выйти из машины(здания, комнаты)|   get	out
+рассорится с кем-то|   fall	out
+быть опубликованным|   come	out
+распечатать(на принтере)|   print	out
+разобраться, получть инфо|   find	out
+
+*UP
+перестать чтото делать регулярно|    give	up
+начать хобби|    take	up
+поднять громкость|   turn	up
+поискать где либо|   look	up
+разорвать на мелкие кусочки|   rip	up
+вырастить ребенка|   bring	up
+вырасти|   grow	up
+расстаться(разорвать отношения)|   split	up
+повесить трубку(передатчик)|   hang	up
+посчитать сумму(денежн.)|   add	up
+поторопиться|   hurry	up
+откладывать деньги|   save	up
+придумать объяснение (оправдание)|    make	up
+
+*IN
+принять в чемто участие|    join	in
+intrested	in
+поучавствовать в|   take part	in
+succeed	in
+сесть в машину|   get	in
+заполнить форму|  fill	in
+
+*OFF
+отослать (отправить на замену)|    send	off
+сойти с поезда(автобуса, корабля)|    get	off
+отправиться в путешествие|   set	off
+оторваться от земли|   take	off
+быть отсоединенным от сети|   cut	off
+разлогиниться|    log	off
+оторвать|   pull	off
+выключить|   turn	off
+
+*DOWN
+приглушить громкость|   turn	down
+записать|   write	down
+разочаровать, подвести|   let	down
+снять (с высокого места)|    take	down
+сломаться (для машины)|   break	down
+
+*WITH
+bored	with
+популярный среди|   popular	with
+перепутать с|   confuse	with
+продолжить что-то|   continue	with
+справляться с|   cope	with
+помочь с|    help	with
+provide	with
+встречаться с парнем(девушкой)|   go out	with
+a relationship	with
+communicate	with
+ошибаться в|    wrong	with
+
+*ABOUT
+crazy	about
+a book	about
+знать о|   know	about
+learn	about
+an opinion	about
+a question	about
+спросить о|   ask	about
+argue with	about
+заботиться о|   care	about
+болтать о|   chat	about
+an argument with	about
+разговаривать о|   talk	about
+tell	about
+написать о|   write	about
+information	about
+письмо о|   a letter	about
+
+*AT
+good	at
+talanted	at
+cheat	at
+прийти|   arrive	at
+смотреть на|   look	at
+glance	at
+
+*LIKE
+чувствоввать себя|  feel	like
+
+*TO
+listen	to
+рядом с|   close	to
+kind	to
+married	to
+reply	to
+отправить|   send	to
+belong	to
+compare	to
+lend	to
+
+*OF
+a fan	of
+capable	of
+быть в восторге от|   fond	of
+jealous	of
+proud	of
+
+*AGAINST
+a game	against
+
+*OVER
+развернуть или перевернуть|   turn	over
+
+*AWAY
+уйти откуда-либо|    go	away
+отдать бесплатно|   give	away
+выбрость что-либо|   throw	away
+
+*BACK
+вернуться куда-либо|   go	back
+перезвонить кому-либо|   call	back
+вернуться|    come	back
+расплатиться, вернуть деньги|     pay	back
+вернуть по месту|   take	back
+
+*FOR
+famous	for
+late	for
+suitable	for
+попросить (об услуге)|   ask	for
+prepare	for
+wait	for
+admire	for
+apologise	for
+pay	for
+an advert	for
+
+*FROM
+far	from
+получить от|   receive	from
+borrow	from
+buy	from
+
+*AFTER
+заботиться ок ком-то|   look	after
+
+*INTO
+translate	into
+
+*BETWEEN
+choose	between
+
+*ACROSS
+найти что-то случайно|    come	across
