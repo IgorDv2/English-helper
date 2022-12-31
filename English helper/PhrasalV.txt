@@ -8,6 +8,8 @@ keen	on
 decide	on
 spend	on
 включить|   turn	on
+что-то происходит, случилось|   go	on
+в зависимости|    depend	on
 
 *OUT
 поесть в ресторане|    eat	out
@@ -35,6 +37,9 @@ spend	on
 поторопиться|   hurry	up
 откладывать деньги|   save	up
 придумать объяснение (оправдание)|    make	up
+начать, создать (бизнес, организацию)|    set	up
+лечь спать поздно|     stay	up
+fed up	with
 
 *IN
 принять в чемто участие|    join	in
@@ -53,6 +58,8 @@ succeed	in
 разлогиниться|    log	off
 оторвать|   pull	off
 выключить|   turn	off
+отменить|    call	off
+отложить дело на потом|    put	off
 
 *DOWN
 приглушить громкость|   turn	down
@@ -73,6 +80,7 @@ provide	with
 a relationship	with
 communicate	with
 ошибаться в|    wrong	with
+быть аккуратным с|    careful	with
 
 *ABOUT
 crazy	about
@@ -91,6 +99,7 @@ tell	about
 написать о|   write	about
 information	about
 письмо о|   a letter	about
+проинформировать о|   inform	about
 
 *AT
 good	at
@@ -113,6 +122,7 @@ reply	to
 belong	to
 compare	to
 lend	to
+refer	to
 
 *OF
 a fan	of
@@ -120,17 +130,20 @@ capable	of
 быть в восторге от|   fond	of
 jealous	of
 proud	of
+a kind	of
 
 *AGAINST
 a game	against
 
 *OVER
 развернуть или перевернуть|   turn	over
+захватить контроль|    take	over
 
 *AWAY
 уйти откуда-либо|    go	away
 отдать бесплатно|   give	away
 выбрость что-либо|   throw	away
+убрать|    take	away
 
 *BACK
 вернуться куда-либо|   go	back
@@ -138,6 +151,7 @@ a game	against
 вернуться|    come	back
 расплатиться, вернуть деньги|     pay	back
 вернуть по месту|   take	back
+вернуть, что позаимствовал|   give	back
 
 *FOR
 famous	for
@@ -150,6 +164,11 @@ admire	for
 apologise	for
 pay	for
 an advert	for
+трудный для|      difficult	for
+ready	for
+responsible	for
+применить к|    apply	for
+работать на|    work	for
 
 *FROM
 far	from
@@ -168,3 +187,6 @@ choose	between
 
 *ACROSS
 найти что-то случайно|    come	across
+
+*AS
+работать кем-то|     work	as
