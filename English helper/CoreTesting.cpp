@@ -23,44 +23,44 @@ int CoreTesting::StartTesting()
 int CoreTesting::FileToArray()
 {	
 	ifstream DataFile;
-	string ActiveLine;
+	//string ActiveLine;
 	
-	int AnswerIndexChar =0;
-	int i = 0;
-	std::string s;
+	int answerIndexChar = 0;
+	int characterIndex = 0;
+	std::string bufferString;
 	
 	DataFile.open("PhrasalV.txt", ios::out);
 
-	while (getline(DataFile, ActiveLine)) {                        //пока не закончатся строки в файле
+	while (getline(DataFile, bufferString)) {															//пока не закончатся строки в файле
 
-		s = ActiveLine;
-		i = s.length();
-		s.copy(arr[NUM], i + 1);									//кладем строку в массив посимвольно
-		arr[NUM][i] = 0;											//в конце массива 0 -  конец строки
+		//bufferString = ActiveLine;
+		characterIndex = bufferString.length();
+		bufferString.copy(QuestionArr[QuestionNumber], characterIndex + 1);							//кладем строку в массив посимвольно
+		QuestionArr[QuestionNumber][characterIndex] = 0;											//в конце массива 0 -  конец строки
 		
-		for (int x = 0; x < i; x++) {								//цикл для определения "зоны ответа"
-			if ((arr[NUM][x] == '\t')) {							//табуляция указывает на то, что после нее искомый для данной строчки предлог
-				arr[NUM][x] = ' ';									//убераем табуляцию
+		for (int x = 0; x < characterIndex; x++) {													//цикл для определения "зоны ответа"
+			if ((QuestionArr[QuestionNumber][x] == '\t')) {											//табуляция указывает на то, что после нее искомый для данной строчки предлог
+				QuestionArr[QuestionNumber][x] = ' ';												//убераем табуляцию
 				x++;
-				AnswerIndexChar = 0;								//обнуляем счетчик начального символа "ответа"
+				answerIndexChar = 0;																//обнуляем счетчик начального символа "ответа"
 				
-				while (arr[NUM][x] != 0) {							//пока текущая строка не закончится
-					AnswerArr[NUM][AnswerIndexChar] = arr[NUM][x];	//кладем предлог в массив для ответов посимвольно
-					arr[NUM][x] = 0;								
+				while (QuestionArr[QuestionNumber][x] != 0) {										//пока текущая строка не закончится
+					AnswerArr[QuestionNumber][answerIndexChar] = QuestionArr[QuestionNumber][x];	//кладем предлог в массив для ответов посимвольно
+					QuestionArr[QuestionNumber][x] = 0;
 					x++;
-					AnswerIndexChar++;
+					answerIndexChar++;
 				}
 
-				AnswerArr[NUM][AnswerIndexChar] = 0;				//ставим знак конца строки в конце ответа
+				AnswerArr[QuestionNumber][answerIndexChar] = 0;										//ставим знак конца строки в конце ответа
 			}
 		}
-		if (arr[NUM][0] != '\n' && arr[NUM][0] !=0 && arr[NUM][0]!='*')  //это условие позволяет пропускать пустые строки и строки, начинающиеся с *
-			NUM++;														//только при соблюдения этого условия, идет запись следующей строки в массив
+		if (QuestionArr[QuestionNumber][0] != '\n' && QuestionArr[QuestionNumber][0] !=0 && QuestionArr[QuestionNumber][0]!='*')  //это условие позволяет пропускать пустые строки и строки, начинающиеся с *
+			QuestionNumber++;																		//только при соблюдения этого условия, идет запись следующей строки в массив
 	}
 	//ActiveLine = AnswerArr[1];
 	//cout << ActiveLine<<endl;
-	Randomize();													//сразу после созданияя массивов с вопросами и ответами - формируется массив случайных чисел
-																	//для выведения вопросов в случайном порядке
+	Randomize();																					//сразу после созданияя массивов с вопросами и ответами - формируется массив случайных чисел
+																									//для выведения вопросов в случайном порядке
 
 	//for (int x = 0; x < NUM;x++) {
 	//	ActiveLine = arr[POINT[x]];
@@ -78,34 +78,34 @@ int CoreTesting::EndTesting()
 	return 0;
 }
 
-int CoreTesting::PhrasalTesting()									//основной метод для запуска теста
+int CoreTesting::PhrasalTesting()														//основной метод для запуска теста
 {
-	int i = 0;														//индекс вопросса/ответа в порядке их выведения
-	string Word;													//строковый буфер для проверки правильности ответа
-	string ActiveLine;												//строковый буфер для текущего вопроса
-	int type=TestingType;											//управляющая переменная
+	int activeQuestionNumber = 0;														//индекс вопросса/ответа в порядке их выведения
+	string activeAnswer;																//строковый буфер для проверки правильности ответа
+	string activeQuestion;																//строковый буфер для текущего вопроса
+	int typeCommand=TestingType;																//управляющая переменная
 	
 
 	for (;;) {
-		Word = AnswerArr[POINT[i]];									//в буфер помещаются строки, соответствующие случайному
-		ActiveLine = arr[POINT[i]];									//числу, лежащему в массиве случайных числел
+		activeAnswer = AnswerArr[RandomNumberArrPointer[activeQuestionNumber]];			//в буфер помещаются строки, соответствующие случайному
+		activeQuestion = QuestionArr[RandomNumberArrPointer[activeQuestionNumber]];		//числу, лежащему в массиве случайных числел
 		
-		cout << ActiveLine<<"___"<< endl;
+		cout << activeQuestion <<"___"<< endl;
 
-		if (type == 0||i==NUM) {									//цикл заканчивает работу либо при переборе всех строк из файла
-			break;													//либо если методом проверки возвращен 0
+		if (typeCommand == 0|| activeQuestionNumber == QuestionNumber) {						//цикл заканчивает работу либо при переборе всех строк из файла
+			break;																		//либо если методом проверки возвращен 0
 		}
 
-		type=checkAnswer(getAnswer(),Word);							//проверка правильного ответа
-																	//при правильном ответе выводится новая строка
-		if (type == 1) {											
-			i++;
+		typeCommand =checkAnswer(getAnswer(), activeAnswer);									//проверка правильного ответа
+																						//при правильном ответе выводится новая строка
+		if (typeCommand == 1) {
+			activeQuestionNumber++;
 		}
 
-		if (type == 3) {											//в случае пропуска вопроса - выводится правильный ответ
-			printColorText(AnswerArr[POINT[i]], 0, 3);				//и после выводится новая строка
+		if (typeCommand == 3) {																//в случае пропуска вопроса - выводится правильный ответ
+			printColorText(AnswerArr[RandomNumberArrPointer[activeQuestionNumber]], 0, 3);				//и после выводится новая строка
 			cout << endl;
-			i++;
+			activeQuestionNumber++;
 		}
 	}
 
@@ -119,21 +119,21 @@ string CoreTesting::getAnswer()
 	return answer;
 }
 
-int CoreTesting::checkAnswer(string check, string base){				
+int CoreTesting::checkAnswer(string answer, string rightAnswer){				
 //Принимает результат ввода и возвращает 1 при правельном ответе,
 //2 при неправильном
 //3 при введении команды "next" - для пропуска вопроса и выведения правильного ответа 
 //и 0 при команде finish
-	if (check == base) {
+	if (answer == rightAnswer) {
 		printColorText("Correct\n", 0, 3);
 		return 1;
 	}
 
-	else if (check == "finish") {
+	else if (answer == "finish") {
 		return 0;
 	}
 
-	else if (check == "next") {
+	else if (answer == "next") {
 		return 3;
 	}
 
@@ -146,33 +146,33 @@ int CoreTesting::checkAnswer(string check, string base){
 
 int CoreTesting::Randomize()								//метод для созданиия последовательности случайных
 {															//неповторяющихся чисел
-	int* p = NULL;
-	int* p1 = NULL;
-	int number;
-	number = NUM;
-	p = new int[number];									//буферный массив, для чисел, которые уже были использованы (чтобы чтсла не повторялись) 
-	p1 = new int[number];									//массив с конечной последовательностью неповторяющихся случайных чисел
+	int* nonReccurentCheckArr = NULL;
+	int* randomNumbersArr = NULL;
+	int arrlength;
+	arrlength = QuestionNumber;
+	nonReccurentCheckArr = new int[arrlength];									//буферный массив, для чисел, которые уже были использованы (чтобы чтсла не повторялись) 
+	randomNumbersArr = new int[arrlength];								//массив с конечной последовательностью неповторяющихся случайных чисел
 
 	int RandBuff;											//числовой буфер для сгенерированного числа
-	int X=0;
-	POINT = p1;												//передаем адрес первого элемента массива в POINT
+	int x=0;
+	RandomNumberArrPointer = randomNumbersArr;												//передаем адрес первого элемента массива в POINT
 
 	srand(time(NULL));
 
-	for (int i = 0; i < NUM; i++) {							//буферный массив заполняем числами, которые никак не могут быть индексом массива
-		p[i] = -1;
+	for (int i = 0; i < QuestionNumber; i++) {							//буферный массив заполняем числами, которые никак не могут быть индексом массива
+		nonReccurentCheckArr[i] = -1;
 	}
 	
 	for (;;) {												//цикл работает до тех пор, пока не будет сгенерированно количество чисел равное количеству вопросов в тесте
-		RandBuff = (1 + rand() % NUM-1) ;
+		RandBuff = (1 + rand() % QuestionNumber -1) ;
 
-		if (p[RandBuff] == -1) {							//если свежесгенерированное число еще не использованно, записываем его в массив
-			p1[X] = RandBuff;
-			p[RandBuff] = -2;
-			X++;
+		if (nonReccurentCheckArr[RandBuff] == -1) {							//если свежесгенерированное число еще не использованно, записываем его в массив
+			randomNumbersArr[x] = RandBuff;
+			nonReccurentCheckArr[RandBuff] = -2;
+			x++;
 		}
 
-		if (X == NUM) break;
+		if (x == QuestionNumber) break;
 
 	}
 
