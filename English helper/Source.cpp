@@ -15,7 +15,7 @@ int main() {
 	CoreTesting case1;
 	case1.FileToArray();			//Подготавливает строчки из файла для тестирования
 	case1.PhrasalTesting();			//Начинает тестирование, запрашивает тип тестирования
-	
+	case1.TestingSummery();			//Выдает на экран резцльтаты тестирования
 
 	return 0;
 }

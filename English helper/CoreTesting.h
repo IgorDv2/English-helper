@@ -8,10 +8,16 @@ using namespace std;
 class CoreTesting
 {
 public:
-	char QuestionArr[300][300];					//массив для хранения строк, содержащих вопросы
-	char AnswerArr[300][300];			//массив для хранения правильных ответов
-	int QuestionNumber = 0;						//общее число вопросов/ответов
+	
+	char QuestionArr[300][100];							//массив для хранения строк, содержащих вопросы
+	char AnswerArr[300][100];							//массив для хранения правильных ответов
+	int QuestionNumber = 0;								//общее число вопросов/ответов
 	int*  RandomNumberArrPointer;						//Указатель на массив со случайными числами
+	int ErrorsNumber = 0;								//общее количество ошибок 
+	int WrongAnswer[300];								//массив для хранения номеров вопросов/ответов, где была ошибка
+	int MissedQuestions[300];							//массив для номеров вопросов которые были пропущены
+	int WrongIndex = 0;									//индекс массива вопросов/ответов c ошибками
+	int MissedIndex = 0;								//индекс массива пропущенных впросов
 
 	CoreTesting() {
 		TestingType=StartTesting();		//Вызывается метод для определения типа теста
@@ -27,6 +33,7 @@ public:
 	string getAnswer();					//считывает ответ с клавиатуры
 	int checkAnswer(string , string );  //сверяет предполагаемый ответ с исходным
 	int Randomize();					//Создает массив случайных, не повторяющихся целых чисел, для случайного выведения вопросов на экран	
+	int TestingSummery();
 
 protected:
 	int TestingType = 0;				//хранит число, соответствующее типу тестирования

@@ -10,6 +10,7 @@ spend	on
 включить|   turn	on
 что-то происходит, случилось|   go	on
 в зависимости|    depend	on
+набрать вес|    put	on
 
 *OUT
 поесть в ресторане|    eat	out
@@ -40,6 +41,7 @@ spend	on
 начать, создать (бизнес, организацию)|    set	up
 лечь спать поздно|     stay	up
 fed up	with
+встать|    stand	up
 
 *IN
 принять в чемто участие|    join	in
@@ -60,6 +62,7 @@ succeed	in
 выключить|   turn	off
 отменить|    call	off
 отложить дело на потом|    put	off
+устать, перестать быть свежим|    go	off
 
 *DOWN
 приглушить громкость|   turn	down
@@ -67,6 +70,10 @@ succeed	in
 разочаровать, подвести|   let	down
 снять (с высокого места)|    take	down
 сломаться (для машины)|   break	down
+сократить|    cut	down
+упасть|    fall	down
+лечь|    lie	down
+присесть|    sit	down
 
 *WITH
 bored	with
@@ -81,6 +88,9 @@ a relationship	with
 communicate	with
 ошибаться в|    wrong	with
 быть аккуратным с|    careful	with
+covered	with
+pleased	with
+обьединить с|    combine	with
 
 *ABOUT
 crazy	about
@@ -100,6 +110,7 @@ tell	about
 information	about
 письмо о|   a letter	about
 проинформировать о|   inform	about
+жаловаться на|    complain	about
 
 *AT
 good	at
@@ -123,6 +134,8 @@ belong	to
 compare	to
 lend	to
 refer	to
+addicted	to
+allergic	to
 
 *OF
 a fan	of
@@ -131,13 +144,16 @@ capable	of
 jealous	of
 proud	of
 a kind	of
+почувствоввать запах|   smell	of
 
 *AGAINST
 a game	against
+бороться против|    fight	against
 
 *OVER
 развернуть или перевернуть|   turn	over
 захватить контроль|    take	over
+перенести, пережить, преодолеть|    get	over
 
 *AWAY
 уйти откуда-либо|    go	away
@@ -169,12 +185,16 @@ ready	for
 responsible	for
 применить к|    apply	for
 работать на|    work	for
+a cure	for
+a recipe	for
 
 *FROM
 far	from
 получить от|   receive	from
 borrow	from
 buy	from
+умереть от|    die	from
+восстановиться от\после|    recover	from
 
 *AFTER
 заботиться ок ком-то|   look	after
