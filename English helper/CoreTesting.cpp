@@ -83,29 +83,47 @@ int CoreTesting::PhrasalTesting()														//основной метод для запуска тест
 	int activeQuestionNumber = 0;														//индекс вопросса/ответа в порядке их выведения
 	string activeAnswer;																//строковый буфер для проверки правильности ответа
 	string activeQuestion;																//строковый буфер для текущего вопроса
-	int typeCommand=TestingType;																//управляющая переменная
-	
+	int typeCommand=TestingType;														//управляющая переменная
+	bool isQuestionRepeated = false;													//переменная для повторяющегося неверного ответа
+
 
 	for (;;) {
-		activeAnswer = AnswerArr[RandomNumberArrPointer[activeQuestionNumber]];			//в буфер помещаются строки, соответствующие случайному
-		activeQuestion = QuestionArr[RandomNumberArrPointer[activeQuestionNumber]];		//числу, лежащему в массиве случайных числел
+		activeAnswer = AnswerArr[RandomNumberArrPointer[activeQuestionNumber]];					//в буфер помещаются строки, соответствующие случайному
+		activeQuestion = QuestionArr[RandomNumberArrPointer[activeQuestionNumber]];				//числу, лежащему в массиве случайных числел
+		
 		
 		cout << activeQuestion <<"___"<< endl;
 
 		if (typeCommand == 0|| activeQuestionNumber == QuestionNumber) {						//цикл заканчивает работу либо при переборе всех строк из файла
-			break;																		//либо если методом проверки возвращен 0
+			break;																				//либо если методом проверки возвращен 0
 		}
 
 		typeCommand =checkAnswer(getAnswer(), activeAnswer);									//проверка правильного ответа
-																						//при правильном ответе выводится новая строка
+																								//при правильном ответе выводится новая строка
 		if (typeCommand == 1) {
 			activeQuestionNumber++;
+			isQuestionRepeated = false;
 		}
 
-		if (typeCommand == 3) {																//в случае пропуска вопроса - выводится правильный ответ
+		if (typeCommand == 2) {
+			ErrorsNumber++;
+			if (isQuestionRepeated == false) {													//если ошибочный ответ дан первый раз
+				WrongAnswer[WrongIndex] = RandomNumberArrPointer[activeQuestionNumber];			//в массив кладется номер текущего вопроса и ответа
+				WrongIndex++;
+				isQuestionRepeated = true;
+			}
+				
+				
+		}
+
+		if (typeCommand == 3) {																			//в случае пропуска вопроса - выводится правильный ответ
 			printColorText(AnswerArr[RandomNumberArrPointer[activeQuestionNumber]], 0, 3);				//и после выводится новая строка
 			cout << endl;
+			ErrorsNumber++;
+			MissedQuestions[MissedIndex] = RandomNumberArrPointer[activeQuestionNumber];				//в масив кладется номер текущего вопроса и ответа
+			MissedIndex++; 
 			activeQuestionNumber++;
+			isQuestionRepeated = false;
 		}
 	}
 
@@ -151,22 +169,22 @@ int CoreTesting::Randomize()								//метод для созданиия последовательности слу
 	int arrlength;
 	arrlength = QuestionNumber;
 	nonReccurentCheckArr = new int[arrlength];									//буферный массив, для чисел, которые уже были использованы (чтобы чтсла не повторялись) 
-	randomNumbersArr = new int[arrlength];								//массив с конечной последовательностью неповторяющихся случайных чисел
+	randomNumbersArr = new int[arrlength];										//массив с конечной последовательностью неповторяющихся случайных чисел
 
-	int RandBuff;											//числовой буфер для сгенерированного числа
+	int RandBuff;																//числовой буфер для сгенерированного числа
 	int x=0;
-	RandomNumberArrPointer = randomNumbersArr;												//передаем адрес первого элемента массива в POINT
+	RandomNumberArrPointer = randomNumbersArr;									//передаем адрес первого элемента массива в POINT
 
 	srand(time(NULL));
 
-	for (int i = 0; i < QuestionNumber; i++) {							//буферный массив заполняем числами, которые никак не могут быть индексом массива
+	for (int i = 0; i < QuestionNumber; i++) {									//буферный массив заполняем числами, которые никак не могут быть индексом массива
 		nonReccurentCheckArr[i] = -1;
 	}
 	
-	for (;;) {												//цикл работает до тех пор, пока не будет сгенерированно количество чисел равное количеству вопросов в тесте
+	for (;;) {																	//цикл работает до тех пор, пока не будет сгенерированно количество чисел равное количеству вопросов в тесте
 		RandBuff = (1 + rand() % QuestionNumber -1) ;
 
-		if (nonReccurentCheckArr[RandBuff] == -1) {							//если свежесгенерированное число еще не использованно, записываем его в массив
+		if (nonReccurentCheckArr[RandBuff] == -1) {								//если свежесгенерированное число еще не использованно, записываем его в массив
 			randomNumbersArr[x] = RandBuff;
 			nonReccurentCheckArr[RandBuff] = -2;
 			x++;
@@ -181,4 +199,33 @@ int CoreTesting::Randomize()								//метод для созданиия последовательности слу
 	//}
 	return 0;
 }
+
+int CoreTesting::TestingSummery()
+{
+	cout << "Всего " << ErrorsNumber << " ошибок " << " из " << QuestionNumber << " словосочетаний"<<endl;
+	cout << "Ошибки в словосочетаниях:" << endl;
+	cout << endl;
+
+	for (int i = 0; i < WrongIndex; i++) {							//выдает на экран все правильные фразы в которых была допущена ошибка
+		//cout << i << " " << WrongIndex << endl;
+		cout<<QuestionArr[WrongAnswer[i]]<<' ';			
+		printColorText(AnswerArr[WrongAnswer[i]], 0, 3);
+		cout <<endl;
+	}
+
+	cout << endl;
+	cout << "Пропущенные словосочетания:" << endl;
+	cout << endl;
+
+	for (int x = 0; x < MissedIndex; x++) {							//выдает на экран все фразы, которые были пропущены
+		cout << QuestionArr[MissedQuestions[x]] << ' ';
+		printColorText(AnswerArr[MissedQuestions[x]], 0, 3);
+		cout << endl;
+	}
+
+	return 0;
+}
+
+
+	
 
