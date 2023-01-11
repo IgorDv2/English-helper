@@ -11,6 +11,10 @@ spend	on
 что-то происходит, случилось|   go	on
 в зависимости|    depend	on
 набрать вес|    put	on
+носить на себе|    have	on
+надеть|    put	on
+примерить|    try	on
+an influence	on
 
 *OUT
 поесть в ресторане|    eat	out
@@ -23,6 +27,7 @@ spend	on
 быть опубликованным|   come	out
 распечатать(на принтере)|   print	out
 разобраться, получть инфо|   find	out
+не влючить (в список)|    leave	out
 
 *UP
 перестать чтото делать регулярно|    give	up
@@ -42,6 +47,8 @@ spend	on
 лечь спать поздно|     stay	up
 fed up	with
 встать|    stand	up
+застегнуть|    do	up
+наполнить|    fill	up
 
 *IN
 принять в чемто участие|    join	in
@@ -50,6 +57,7 @@ intrested	in
 succeed	in
 сесть в машину|   get	in
 заполнить форму|  fill	in
+involved	in
 
 *OFF
 отослать (отправить на замену)|    send	off
@@ -63,6 +71,8 @@ succeed	in
 отменить|    call	off
 отложить дело на потом|    put	off
 устать, перестать быть свежим|    go	off
+отрезать|    cut	off
+снять (одежду)|   take	off
 
 *DOWN
 приглушить громкость|   turn	down
@@ -91,6 +101,8 @@ communicate	with
 covered	with
 pleased	with
 обьединить с|    combine	with
+disappointed	with
+знаком с |     familiar	with
 
 *ABOUT
 crazy	about
@@ -119,6 +131,7 @@ cheat	at
 прийти|   arrive	at
 смотреть на|   look	at
 glance	at
+amazed	at
 
 *LIKE
 чувствоввать себя|  feel	like
@@ -136,6 +149,8 @@ lend	to
 refer	to
 addicted	to
 allergic	to
+similar	to
+explain	to
 
 *OF
 a fan	of
@@ -145,6 +160,8 @@ jealous	of
 proud	of
 a kind	of
 почувствоввать запах|   smell	of
+remind	of
+a picture	of
 
 *AGAINST
 a game	against
@@ -195,12 +212,14 @@ borrow	from
 buy	from
 умереть от|    die	from
 восстановиться от\после|    recover	from
+снять с|   remove	from
 
 *AFTER
 заботиться ок ком-то|   look	after
 
 *INTO
 translate	into
+переделать(превратить) в|    change	into
 
 *BETWEEN
 choose	between
@@ -210,3 +229,4 @@ choose	between
 
 *AS
 работать кем-то|     work	as
+describe	as
